@@ -19,15 +19,15 @@ TOPICS = [
     "video game",
     "t-shirt",
     "natural gas",
-    # "health care",
+    "health care",
     "furniture",
     "interior design",
     "ebook",
     "novel",
     "footwear",
     "lingerie",
-    # "real estate",
-    # "life insurance"
+    "real estate",
+    "life insurance"
 ]
 
 

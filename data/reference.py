@@ -52,7 +52,7 @@ for keyword in TOPICS:
 
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#input-30"))).send_keys(keyword)
 
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".md-autocomplete-suggestions > li:nth-child(3) > * .autocomplete-title"))).click()
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".md-autocomplete-suggestions > li:nth-child(2) > * .autocomplete-title"))).click()
 
         time.sleep(1.5)
 
