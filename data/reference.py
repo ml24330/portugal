@@ -39,7 +39,15 @@ TOPICS = [
     "footwear",
     "lingerie",
     "real estate",
-    "life insurance" 
+    "life insurance",
+    "dessert",
+    "potato",
+    "coffee",
+    "bottled water",
+    "margarine",
+    "offal",
+    "juice",
+    "jam"
 ]
 
 
