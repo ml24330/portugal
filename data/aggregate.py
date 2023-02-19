@@ -1,43 +1,7 @@
 import pandas as pd
+from categories import TOPICS
 
-TOPICS = [
-    "automotive industry",
-    "auto insurance",
-    "second hand car",
-    "mobile phone",
-    "mercedes benz",
-    "electrical appliance",
-    "wifi",
-    "clothing",
-    "shoes",
-    "underwear",
-    "electricity",
-    # "energy", 
-    "gasoline",
-    "tobacco",
-    "video game",
-    "t-shirt",
-    "natural gas",
-    # "health care", LATER
-    "furniture",
-    "interior design",
-    "ebook",
-    "novel",
-    "footwear",
-    # "lingerie",
-    # "real estate",
-    # "life insurance",
-    # "dessert",
-    # "potato",
-    # "coffee",
-    # "bottled water",
-    # "margarine",
-    # "offal",
-    # "juice",
-    # "jam" LATER
-]
-
-
+TOPICS.remove("energy")
 df = pd.DataFrame()
 
 energy = pd.read_csv("combined.csv")["energy"]
@@ -49,6 +13,7 @@ for topic in TOPICS:
 
     for year in range(2006, 2019):
         compared = pd.read_csv(f"raw/--{topic}-{year}.csv", skiprows=[0], index_col="Week").iloc[1:,:]
+        compared = compared.replace("<1","0.5")
 
         column_with_max = pd.Series((compared == 100).astype(int).sum().values).idxmax()
 
@@ -57,9 +22,9 @@ for topic in TOPICS:
 
 
         if column_with_max == 0:
-            ratio = sum(compared.iloc[:,-1].astype(int))/sum(other_reference.astype(int))
+            ratio = sum(compared.iloc[:,-1].astype(float))/sum(other_reference.astype(float))
         elif column_with_max == 1:
-            ratio = sum(energy_reference.astype(int))/sum(compared.iloc[:,0].astype(int))
+            ratio = sum(energy_reference.astype(float))/sum(compared.iloc[:,0].astype(float))
 
         ratios.append(ratio)
 
@@ -70,4 +35,4 @@ for topic in TOPICS:
 
 
 
-df.to_csv("test.csv")
+df.to_csv("comparable.csv")

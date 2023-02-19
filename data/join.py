@@ -1,50 +1,5 @@
 import pandas as pd
-
-TOPICS = [
-    # "automotive industry",
-    # "auto insurance",
-    # "second hand car",
-    # "mobile phone",
-    # "mercedes benz",
-    # "electrical appliance",
-    # "wifi",
-    # "clothing",
-    # "shoes",
-    # "underwear",
-    # "electricity",
-    # "energy",
-    # "gasoline",
-    # "tobacco",
-    # "video game",
-    # "t-shirt",
-    # "natural gas",
-    # "health care",
-    # "furniture",
-    # "interior design",
-    # "ebook",
-    # "novel",
-    # "footwear",
-    # "lingerie",
-    # "real estate",
-    # "life insurance",
-    # "dessert",
-    # "potato",
-    # "coffee",
-    # "bottled water",
-    # "margarine",
-    # "offal",
-    # "juice",
-    # "jam",
-    "veterinarians",
-    "amusement park",
-    "television",
-    "hairdresser",
-    "timber",
-    "travel agency",
-    "nightclub",
-    # "fur",
-    # "vitamins"
-]
+from categories import TOPICS
 
 
 df = pd.DataFrame()
